@@ -3,7 +3,6 @@
 A personal Hyprland desktop setup with a built-in palette switcher, custom `cava` audio visualizer shaders, and a fully modular Lua-based config.
 
 ![screenshot](screenshot.png)
-*(replace this with your own desktop screenshot before pushing — drag it into the repo root and name it `screenshot.png`)*
 
 ## ✨ Features
 
@@ -76,7 +75,7 @@ Each palette comes with a matching wallpaper set in `hypr/themes/wallpapers/`.
 
 ## 📺 Video
 
-Check out the full setup walkthrough on my YouTube channel: *(link here)*
+Check out the full setup walkthrough on my YouTube channel: *(will upload soon)*
 
 ## License
 
