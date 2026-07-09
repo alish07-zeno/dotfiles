@@ -38,7 +38,7 @@ dotfiles/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/dotfiles.git
+   git clone https://github.com/alish07-zeno/dotfiles.git
    cd dotfiles
    ```
 
