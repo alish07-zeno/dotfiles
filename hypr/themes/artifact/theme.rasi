@@ -1,0 +1,10 @@
+* {
+    bg-base:    #0d0d0d;
+    bg-mantle:  #111111;
+    fg-text:    #d4d4d4;
+    fg-sub:     #888888;
+    primary:    #c0c0c0;
+    secondary:  #888888;
+    accent:     #ffffff;
+    error:      #cc3333;
+}

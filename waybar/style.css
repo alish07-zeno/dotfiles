@@ -1,0 +1,231 @@
+@define-color base #0d0d0d;
+@define-color mantle #111111;
+@define-color text #d4d4d4;
+@define-color primary #c0c0c0;
+@define-color secondary #888888;
+@define-color accent #ffffff;
+@define-color error #cc3333;
+
+/* ── Reset ────────────────────────────────────────────── */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12.3px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* ── Bar ──────────────────────────────────────────────── */
+window#waybar {
+  background: alpha(@base, 0.97);
+  color: @text;
+  border-radius: 15px;
+  border: 2px solid alpha(@primary, 0.45);
+  margin: 6px 10px 0 10px;
+}
+
+/* ── Workspaces ───────────────────────────────────────── */
+#workspaces {
+  padding: 0 10px;
+}
+
+#workspaces button {
+  color: alpha(@text, 0.55);
+  font-size: 11.5px;
+  font-weight: 700;
+  min-width: 25px;
+  min-height: 24px;
+  margin: 4px 1px;
+  padding: 0 9px;
+  border-radius: 7px;
+  background: transparent;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: alpha(@text, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#workspaces button.active {
+  color: @secondary;
+  background: alpha(@secondary, 0.15);
+  border-radius: 7px;
+}
+
+#workspaces button.urgent {
+  color: @error;
+  background: alpha(@error, 0.12);
+}
+
+/* ── Cava ─────────────────────────────────────────────── */
+#custom-cava {
+  color: alpha(@secondary, 0.75);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 0 6px 0 2px;
+}
+
+/* ── Window title ─────────────────────────────────────── */
+#window {
+  color: alpha(@text, 0.62);
+  font-size: 12.3px;
+  font-weight: 500;
+  padding: 0 10px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Right modules shared ─────────────────────────────── */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#clock,
+#custom-controlcenter,
+#custom-wlogout,
+#custom-nepali {
+  background: alpha(@mantle, 0.7);
+  border-radius: 8px;
+  border: 1px solid alpha(@primary, 0.08);
+  margin: 4px 4px;
+  padding: 0 11px;
+  min-height: 24px;
+}
+
+/* ── Tray ─────────────────────────────────────────────── */
+#tray {
+  background: alpha(@mantle, 0.7);
+  border-radius: 8px;
+  border: 1px solid alpha(@primary, 0.08);
+  margin: 4px 4px;
+  margin-left: 7px;
+  padding: 0 8px;
+  min-height: 24px;
+}
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention {
+  background: alpha(@error, 0.12);
+  border-radius: 4px;
+}
+
+/* ── CPU — start of stats group ──────────────────────── */
+#cpu {
+  color: @error;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+#cpu.warning { color: @accent; }
+#cpu.critical {
+  color: @error;
+  background: alpha(@error, 0.10);
+}
+
+/* ── Memory ───────────────────────────────────────────── */
+#memory { color: @primary; }
+#memory.warning { color: @accent; }
+#memory.critical {
+  color: @error;
+  background: alpha(@error, 0.10);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/* ── Audio — start of media group ────────────────────── */
+#pulseaudio {
+  color: @secondary;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+#pulseaudio.muted {
+  color: alpha(@text, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Network ──────────────────────────────────────────── */
+#network {
+  color: @secondary;
+  font-size: 12.5px;
+  margin-left: 4;
+  margin-right: 4;
+  padding: 0.38px 12.8px 0 8px;
+  min-height: 13px;
+
+}
+#network.wifi {
+  color: @secondary;
+}
+#network.ethernet {
+  color: @primary;
+}
+#network.disconnected {
+  color: alpha(@error, 0.75);
+}
+#network:hover {
+  color: @accent;
+  background: alpha(@primary, 0.08);
+}
+
+/* ── Nepali date ──────────────────────────────────────── */
+#custom-nepali {
+  color: @accent;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans Devanagari", sans-serif;
+  font-size: 11.7px;
+  font-weight: 700;
+  padding: 2.5px 13px 0px 13px;
+  margin-left: 4;
+  margin-right: 4;
+}
+
+/* ── Clock ────────────────────────────────────────────── */
+#clock {
+  color: @primary;
+  font-size: 12.3px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  padding: 0px 13px 0px 13px;
+  margin-left: 4;
+  margin-right: 4;
+}
+
+/* ── Wlogout ──────────────────────────────────────────── */
+#custom-wlogout {
+  color: alpha(@error, 0.75);
+  font-size: 14px;
+  padding: 0.7 10.99px 0 9.49;
+}
+#custom-wlogout:hover {
+  color: @error;
+  background: alpha(@error, 0.12);
+}
+
+/* ── Notifications ────────────────────────────────────── */
+#custom-controlcenter {
+  color: alpha(@primary, 0.85);
+  font-size: 13px;
+  margin-right: 10px;
+  padding: 0.38px 10.8px 0 9px;
+}
+#custom-controlcenter:hover {
+  color: @primary;
+  background: alpha(@primary, 0.10);
+}
+
+/* ── Tooltip ──────────────────────────────────────────── */
+tooltip {
+  background: alpha(@base, 0.97);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+tooltip label {
+  color: @text;
+  padding: 2px 4px;
+}
+
+@import url("rectangular.css");

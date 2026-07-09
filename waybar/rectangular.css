@@ -1,0 +1,40 @@
+/* ── Rectangular overrides — AUTO GENERATED ── */
+
+window#waybar {
+    border-radius: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    border: none;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(192, 192, 192, 0.60);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button { border-radius: 0px; }
+
+#workspaces button.active { border-radius: 0px; }
+
+#cpu,
+#memory,
+#pulseaudio,
+#clock,
+#custom-controlcenter,
+#network,
+#custom-wlogout,
+#custom-nepali {
+    border-radius: 0px;
+    border: none;
+}
+
+#tray {
+    border-radius: 0px;
+    border: none;
+}
+
+#tray > .needs-attention { border-radius: 0px; }
+
+tooltip { border-radius: 0px; }

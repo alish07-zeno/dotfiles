@@ -1,0 +1,21 @@
+/**
+ * Colors — driven by Celestial Shade theme switcher
+ * This file imports the auto-generated theme artifact
+ * instead of a hardcoded color scheme.
+ **/
+
+@import "~/.config/hypr/themes/artifact/theme.rasi"
+
+/**
+ * Map theme variables to rofi's expected variable names.
+ * theme.rasi defines: bg-base, bg-mantle, fg-text, fg-sub, primary, secondary, accent, error
+ **/
+
+* {
+    background:     @bg-base;
+    background-alt: @bg-mantle;
+    foreground:     @fg-text;
+    selected:       @primary;
+    active:         @secondary;
+    urgent:         @error;
+}

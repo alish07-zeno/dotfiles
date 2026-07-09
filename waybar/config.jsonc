@@ -1,0 +1,152 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 0,
+
+  "margin-top": -3,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/cava"
+  ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "custom/nepali",
+    "clock",
+    "tray",
+    "network",
+    "custom/wlogout",
+    "custom/controlcenter"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7]
+    },
+
+    "active-only": false,
+    "all-outputs": false,
+
+    "on-click": "activate",
+
+"on-scroll-up":   "bash ~/.config/waybar/ws-scroll.sh up",
+"on-scroll-down": "bash ~/.config/waybar/ws-scroll.sh down"
+ },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 40,
+
+    "rewrite": {
+      "": "Desktop",
+      "(.+) — Mozilla Firefox": "$1",
+      "(.+) - Visual Studio Code": "$1",
+      "(.+) - Brave Browser": "$1",
+      "(.+) - fish": "$1",
+      "(.+) - zsh": "$1"
+    }
+  },
+
+  "custom/cava": {
+    "exec-on-event": false,
+    "exec": "bash $HOME/.config/waybar/cava-waybar.sh",
+    "format": "{}",
+    "return-type": "",
+    "interval": 0,
+    "tooltip": false
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 3,
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 muted",
+
+    "format-icons": {
+      "muted": "󰖁",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾",
+        "󰕾"
+      ]
+    },
+
+    "tooltip-format": "{volume}%",
+
+    "on-click": "pavucontrol",
+    "on-click-right": "pamixer -t",
+
+    "on-scroll-up": "pamixer -i 2",
+    "on-scroll-down": "pamixer -d 2"
+  },
+
+  "custom/nepali": {
+    "exec": "bash $HOME/.config/waybar/nepali-date.sh",
+    "format": "{}",
+    "return-type": "",
+    "interval": 3600,
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "󰥔 {:%I:%M %p}",
+    "format-alt": "󰸗 {:%a, %d %b}",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 5
+  },
+
+  "custom/wlogout": {
+    "format": "󰐥",
+    "on-click": "wlogout -b 5",
+    "tooltip": false
+  },
+  "network": {
+  "format-wifi": "{icon}",
+  "format-ethernet": "󰈀",
+  "format-linked": "󰈀",
+  "format-disconnected": "󰤭",
+  "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+  "tooltip-format-wifi": "{essid}  {signalStrength}%",
+  "tooltip-format-ethernet": "{ifname} ",
+  "tooltip-format-disconnected": "Disconnected",
+  "interval": 5,
+  "on-click": "networkmanager_dmenu"
+  },
+"custom/controlcenter": {
+    "format": "󰂚",
+    "return-type": "",
+    "on-click": "swaync-client --toggle-panel",
+    "tooltip": false
+  }
+}
