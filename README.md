@@ -75,7 +75,7 @@ Each palette comes with a matching wallpaper set in `hypr/themes/wallpapers/`.
 
 ## 📺 Video
 
-Check out the full setup walkthrough on my YouTube channel: *(will upload soon)*
+Check out the full setup walkthrough on my YouTube channel: https://youtu.be/Ter9wb_jJGI
 
 ## License
 
